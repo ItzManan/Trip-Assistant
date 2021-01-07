@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="trip-container">
+        <div class="heading">
+            Plan Your <br> <center>Trip</center>
+        </div>
+        <div class="fields">
+            <input type="text" class="field" id="from" placeholder="From">
+            <input type="text" class="field" id="to" placeholder="To">
+            <input type="text" class="field" id="dep" placeholder="Departure">
+            <input type="text" class="field" id="arr" placeholder="Arrival">
+        </div>
+        <button class="submit">
+            Plan My Trip
+        </button>
+        <div class="loading-container hide">
+            <div class="loader"></div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+    <script src="{{url_for('static', filename = 'zenscroll-min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'script2.js') }}"></script>
+</body>
+</html>
