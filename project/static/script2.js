@@ -20,7 +20,7 @@ from.addEventListener('blur', () => {
 btn.addEventListener('click', () => {
     loadingBox.style.zIndex = 3
     loadingBox.classList.remove('hide')
-    fetch('http://127.0.0.1:5000', {
+    fetch(window.location.href, {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
