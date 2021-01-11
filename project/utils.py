@@ -28,4 +28,4 @@ def full_flight(origin, origin_city, destination, destination_city):
     if not data:
         message = f"No direct flights available from {origin_city} to {destination_city}"
     
-    return data
+    return [data, message]

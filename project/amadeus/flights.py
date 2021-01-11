@@ -88,7 +88,7 @@ def flight_search(lat1, lon1, lat2, lon2, departure_date, return_date, token):
         # print("\n\n\n")
         return data, airport_name1, airport_name2
     except:
-        return False
+        return False, False, False
     # return data_str
 
 # --------------------------------------------------------------------
