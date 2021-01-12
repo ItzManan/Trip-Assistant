@@ -38,6 +38,7 @@ btn.addEventListener('click', () => {
         document.body.style.overflowY = 'visible'
         fields.style.zIndex = 0
         loadingBox.classList.add('hide')
+        console.log('HELLO')
         console.log(data)
         displayData(data)
     })
@@ -80,10 +81,6 @@ function displayData(data) {
         ${JSON.stringify(data[0])}
         <br>
         ${JSON.stringify(data[1])}
-<<<<<<< HEAD
-        `
-}
-=======
     `
     document.body.appendChild(bigdiv)
     /*window.scrollBy({
@@ -92,4 +89,3 @@ function displayData(data) {
     })*/
     zenscroll.to(bigdiv)
 }
->>>>>>> 267ee7549b178c0c31bef6297713f3917da402a0
