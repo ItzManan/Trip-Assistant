@@ -52,7 +52,7 @@ btn.addEventListener('click', () => {
         document.body.style.overflowY = 'visible'
         fields.style.zIndex = 0
         loadingBox.classList.add('hide')
-
+        console.log(data)
         displayData(data)
     })
 })
@@ -94,4 +94,5 @@ function displayData(data) {
         ${JSON.stringify(data[0])}
         <br>
         ${JSON.stringify(data[1])}
+        `
 }
