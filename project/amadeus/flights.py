@@ -1,7 +1,10 @@
 import json
+from datetime import *
+from dateutil.tz import *
+import time
 import requests
 # --------------------------------------------------------------------
-name = "Mumbai"
+name = "London"
 # lat2, lon2 = 51.5073, -0.127647
 # --------------------------------------------------------------------
 
@@ -24,7 +27,8 @@ def weather(city_name):
         'dt': r['dt'],
         'country': r['sys']['country'],
         'sun_time': [r['sys']['sunrise'], r['sys']['sunset']],
-        'timezone': r['timezone']
+        'timezone': r['timezone'],
+        'time' : str(datetime.now(tzoffset("", r['timezone'])))
     }
     return sample
 
@@ -40,7 +44,7 @@ def nearest_airport(lat, lon, token):
         "Authorization": f"Bearer {token}"
     }
     url = f'https://test.api.amadeus.com/v1/reference-data/locations/airports?latitude={lat}&longitude={lon}'
-
+    min_lst = []
     response = requests.get(url, headers=headers)
     data = response.json()['data']
     min = data[0]['distance']['value']
