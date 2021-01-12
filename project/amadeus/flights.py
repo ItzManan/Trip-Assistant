@@ -1,10 +1,8 @@
 import json
-from datetime import *
-from dateutil.tz import *
 import time
 import requests
 # --------------------------------------------------------------------
-name = "London"
+name = "Mumbai"
 # lat2, lon2 = 51.5073, -0.127647
 # --------------------------------------------------------------------
 
@@ -27,8 +25,7 @@ def weather(city_name):
         'dt': r['dt'],
         'country': r['sys']['country'],
         'sun_time': [r['sys']['sunrise'], r['sys']['sunset']],
-        'timezone': r['timezone'],
-        'time' : str(datetime.now(tzoffset("", r['timezone'])))
+        'timezone': r['timezone']
     }
     return sample
 
@@ -44,7 +41,7 @@ def nearest_airport(lat, lon, token):
         "Authorization": f"Bearer {token}"
     }
     url = f'https://test.api.amadeus.com/v1/reference-data/locations/airports?latitude={lat}&longitude={lon}'
-    min_lst = []
+
     response = requests.get(url, headers=headers)
     data = response.json()['data']
     min = data[0]['distance']['value']
@@ -62,38 +59,72 @@ def nearest_airport(lat, lon, token):
 
 
 def flight_search(lat1, lon1, lat2, lon2, departure_date, return_date, token):
-    try:
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-        city1, airport_name1 = nearest_airport(lat1, lon1, token)
-        city2, airport_name2 = nearest_airport(lat2, lon2, token)
-        # ****************DONT CLEAR THIS****************
-        # TESTING DATES
-        # departure_date = '2021-01-20'
-        # return_date = '2021-01-27'
+  start = time.time()
+  # try:
+  headers = {
+      "Authorization": f"Bearer {token}"
+  }
+  import asyncio
+  import aiohttp
 
-        # INITIAL CODE STARTS
-        # url = f"https://test.api.amadeus.com/v1/shopping/flight-destinations?origin={city1}&departureDate={departure_date}"
-        # response = requests.get(url, headers=headers)
-        # data = response.json()['data']
-        # for flight in data:
-        #     if flight['destination'] == city2:
-        #         data_str = json.dumps(flight, indent=3)
-        #         print(data_str)
-        #         print("\nSEPARATOR\n")
-        # INITIAL CODE ENDS
-        # ****************DONT CLEAR THIS****************
+  async def main():
+    async with aiohttp.ClientSession() as session:
+      tasks = []
+      task1 = asyncio.ensure_future(get_it(session, lat1, lon1, token))
+      task2 = asyncio.ensure_future(get_it(session, lat2, lon2, token))
 
-        url = f"https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode={city1}&destinationLocationCode={city2}&departureDate={departure_date}&returnDate={return_date}&adults=2&max=5"
-        response = requests.get(url, headers=headers)
-        data = response.json()['data']
-        # print(data)
-        # print("\n\n\n")
-        return data, airport_name1, airport_name2
-    except:
-        return False, False, False
-    # return data_str
+      tasks.append(task1)
+      tasks.append(task2)
+
+      final = await asyncio.gather(*tasks)
+    return final
+
+  async def get_it(session, lat, lon, token):
+    url = f'https://test.api.amadeus.com/v1/reference-data/locations/airports?latitude={lat}&longitude={lon}'
+    async with session.get(url, headers=headers) as response:
+      data = await response.json()
+      data = data['data']
+      min = data[0]['distance']['value']
+      min_loc = data[0]
+      for location in data:
+          if location['distance']['value'] < min:
+              min = location['distance']['value']
+              min_loc = location
+      # print("{} - {}{}".format(min_loc['name'],min_loc['distance']['value'],min_loc['distance']['unit']))
+      # print(min_loc['address']['cityCode'])
+      return [min_loc['address']['cityCode'], min_loc['name']]
+
+
+  # city1, airport_name1 = nearest_airport(lat1, lon1, token)
+  # city2, airport_name2 = nearest_airport(lat2, lon2, token)
+  # ****************DONT CLEAR THIS****************
+  # TESTING DATES
+  # departure_date = '2021-01-20'
+  # return_date = '2021-01-27'
+
+  # INITIAL CODE STARTS
+  # url = f"https://test.api.amadeus.com/v1/shopping/flight-destinations?origin={city1}&departureDate={departure_date}"
+  # response = requests.get(url, headers=headers)
+  # data = response.json()['data']
+  # for flight in data:
+  #     if flight['destination'] == city2:
+  #         data_str = json.dumps(flight, indent=3)
+  #         print(data_str)
+  #         print("\nSEPARATOR\n")
+  # INITIAL CODE ENDS
+  # ****************DONT CLEAR THIS****************
+  [city1, airport_name1],[city2, airport_name2] = asyncio.run(main())
+  url = f"https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode={city1}&destinationLocationCode={city2}&departureDate={departure_date}&returnDate={return_date}&adults=2&max=5"
+  response = requests.get(url, headers=headers)
+  data = response.json()['data']
+  # print(data)
+  # print("\n\n\n")
+  print(time.time() - start)
+  return data, airport_name1, airport_name2
+  # except:
+      # print(time.time() - start)
+      # return False, False, False
+  # return data_str
 
 # --------------------------------------------------------------------
 
