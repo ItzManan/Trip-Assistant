@@ -4,6 +4,9 @@ const btn = document.querySelector('.submit')
 const loadingBox = document.querySelector('.loading-container')
 const fields = document.querySelector('.fields')
 
+/*const bgs = {'1': ['https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=968&q=80', 'https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=968&q=80', 'https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=968&q=80'], 
+2: ['https://images.unsplash.com/photo-1539511977266-f0b884a7ee39?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTV8fHxlbnwwfHx8&auto=format&fit=crop&w=500&q=60']}*/
+
 let data = {}
 
 zenscroll.setup(null, 0)
@@ -18,8 +21,9 @@ from.addEventListener('blur', () => {
 })
 
 btn.addEventListener('click', () => {
-    loadingBox.style.zIndex = 3
     loadingBox.classList.remove('hide')
+    loadingBox.style.zIndex = 3
+
     fetch(window.location.href, {
         method: 'POST', // or 'PUT'
         headers: {
@@ -29,12 +33,9 @@ btn.addEventListener('click', () => {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Success:', data);
-        //document.body.style.overflow = visible
-        loadingBox.style.opacity = 0
-        setTimeout(() => loadingBox.style.display = 'none', 500)
         document.body.style.overflowY = 'visible'
         fields.style.zIndex = 0
+        loadingBox.classList.add('hide')
         displayData(data)
     })
 })
@@ -73,7 +74,9 @@ function displayData(data) {
     bigdiv.style.color = 'white'
     bigdiv.innerHTML = `<center>EPIC ULTRA PRO MAX DATA!!!!!!</center>
         <br>
-        ${JSON.stringify(data)}
+        ${JSON.stringify(data[0])}
+        <br>
+        ${JSON.stringify(data[1])}
     `
     document.body.appendChild(bigdiv)
     /*window.scrollBy({
