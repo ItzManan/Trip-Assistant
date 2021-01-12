@@ -3,8 +3,6 @@ const from = document.querySelector('#from')
 const btn = document.querySelector('.submit')
 const loadingBox = document.querySelector('.loading-container')
 const fields = document.querySelector('.fields')
-const dep = document.getElementById('dep')
-const arr = document.getElementById('arr')
 
 /*const bgs = {'1': ['https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=968&q=80', 'https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=968&q=80', 'https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=968&q=80'], 
 2: ['https://images.unsplash.com/photo-1539511977266-f0b884a7ee39?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTV8fHxlbnwwfHx8&auto=format&fit=crop&w=500&q=60']}*/
@@ -21,18 +19,6 @@ from.addEventListener('blur', () => {
     to.style.zIndex = 0
     to.focus()
 })
-
-dep.onchange = function() {
-    data.depDate = this.value
-    dep.classList.remove('active')
-    dep.classList.add('show')
-}
-
-arr.onchange = function() {
-    data.arrDate = this.value
-    arr.classList.remove('active')
-    arr.classList.add('show')
-}
 
 btn.addEventListener('click', () => {
     loadingBox.classList.remove('hide')
@@ -94,5 +80,16 @@ function displayData(data) {
         ${JSON.stringify(data[0])}
         <br>
         ${JSON.stringify(data[1])}
+<<<<<<< HEAD
         `
 }
+=======
+    `
+    document.body.appendChild(bigdiv)
+    /*window.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth'
+    })*/
+    zenscroll.to(bigdiv)
+}
+>>>>>>> 267ee7549b178c0c31bef6297713f3917da402a0
