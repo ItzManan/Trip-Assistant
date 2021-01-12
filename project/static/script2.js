@@ -5,9 +5,11 @@ const loadingBox = document.querySelector('.loading-container')
 const fields = document.querySelector('.fields')
 const dep = document.getElementById('dep')
 const arr = document.getElementById('arr')
+const tripContainer = document.querySelector('.trip-container')
 
-/*const bgs = {'1': ['https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=968&q=80', 'https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=968&q=80', 'https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=968&q=80'], 
-2: ['https://images.unsplash.com/photo-1539511977266-f0b884a7ee39?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTV8fHxlbnwwfHx8&auto=format&fit=crop&w=500&q=60']}*/
+console.log(`url('./bgs/${Math.ceil(Math.random()*9)}.jpg')`)
+
+tripContainer.style.backgroundImage = `url('static/bgs/${Math.ceil(Math.random()*9)}.jpg')`
 
 let data = {}
 
