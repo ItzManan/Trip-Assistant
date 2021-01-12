@@ -3,6 +3,7 @@ def full_flight(origin, origin_city, destination, destination_city):
     token = get_token.get_token()
     message = ''
     data = ''
+    
     '''origin = request.form['origin']
     origin_city = request.form['origin_city']
     destination = request.form['destination']

@@ -9,8 +9,8 @@ def get_token():
 
     data = {
         'grant_type': 'client_credentials',
-        'client_id': 'QFqpTSEjKQBsaKNdVzFXWASwHpX4jh6o',
-        'client_secret': 'qgvmqlG2DveTXF1B'
+        'client_id': 'fGafUOXzBpNAEFdq8TZ5sEi0N2AMpift',
+        'client_secret': 'a06gaYAJqFDfyGXb'
     }
 
     response = requests.post(

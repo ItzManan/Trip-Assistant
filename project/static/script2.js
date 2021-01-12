@@ -94,11 +94,4 @@ function displayData(data) {
         ${JSON.stringify(data[0])}
         <br>
         ${JSON.stringify(data[1])}
-    `
-    document.body.appendChild(bigdiv)
-    /*window.scrollBy({
-        top: window.innerHeight,
-        behavior: 'smooth'
-    })*/
-    zenscroll.to(bigdiv)
 }
