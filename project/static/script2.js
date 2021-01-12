@@ -38,6 +38,8 @@ btn.addEventListener('click', () => {
     loadingBox.classList.remove('hide')
     loadingBox.style.zIndex = 3
 
+    console.log(data)
+    
     fetch(window.location.href, {
         method: 'POST', // or 'PUT'
         headers: {
@@ -50,6 +52,7 @@ btn.addEventListener('click', () => {
         document.body.style.overflowY = 'visible'
         fields.style.zIndex = 0
         loadingBox.classList.add('hide')
+
         displayData(data)
     })
 })
