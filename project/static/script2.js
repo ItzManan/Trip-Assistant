@@ -51,12 +51,15 @@ btn.addEventListener('click', () => {
     })
     .then(response => response.json())
     .then(data => {
-        document.body.style.overflowY = 'visible'
+        console.log(data)
+        console.log(window.location.href)
+        window.location = window.location.href+'trip'
+        /*document.body.style.overflowY = 'visible'
         fields.style.zIndex = 0
         loadingBox.classList.add('hide')
         console.log('HELLO')
         console.log(data)
-        displayData(data)
+        displayData(data)*/
     })
 })
 
