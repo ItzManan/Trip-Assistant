@@ -83,16 +83,19 @@ def flight_search(lat1, lon1, lat2, lon2, departure_date, return_date, token):
     url = f'https://test.api.amadeus.com/v1/reference-data/locations/airports?latitude={lat}&longitude={lon}'
     async with session.get(url, headers=headers) as response:
       data = await response.json()
-      data = data['data']
-      min = data[0]['distance']['value']
-      min_loc = data[0]
-      for location in data:
-          if location['distance']['value'] < min:
-              min = location['distance']['value']
-              min_loc = location
+      try:
+        data = data['data']
+        min = data[0]['distance']['value']
+        min_loc = data[0]
+        for location in data:
+            if location['distance']['value'] < min:
+                min = location['distance']['value']
+                min_loc = location
       # print("{} - {}{}".format(min_loc['name'],min_loc['distance']['value'],min_loc['distance']['unit']))
       # print(min_loc['address']['cityCode'])
-      return [min_loc['address']['cityCode'], min_loc['name']]
+        return [min_loc['address']['cityCode'], min_loc['name']]
+      except:
+        return False, False, False
 
 
   # city1, airport_name1 = nearest_airport(lat1, lon1, token)
@@ -114,6 +117,8 @@ def flight_search(lat1, lon1, lat2, lon2, departure_date, return_date, token):
   # INITIAL CODE ENDS
   # ****************DONT CLEAR THIS****************
   [city1, airport_name1],[city2, airport_name2] = asyncio.run(main())
+  if False in [city1, airport_name1] or False in [city2, airport_name2]:
+    return False
   url = f"https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode={city1}&destinationLocationCode={city2}&departureDate={departure_date}&returnDate={return_date}&adults=2&max=5"
   response = requests.get(url, headers=headers)
   data = response.json()['data']
