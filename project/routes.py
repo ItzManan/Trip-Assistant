@@ -11,11 +11,11 @@ main = Blueprint('main', __name__)
 def index():
     if request.method == "POST":
         data = request.get_json(force=True)
-        result = full_flight(data['origin'], data['origin_city'], data['destination'], data['destination_city'])
+        result = full_flight(data['origin'], data['origin_city'], data['destination'], data['destination_city'], data['depDate'], data['arrDate'])
         
         #time.sleep(2)
         session['data'] = result
-
+        
         # TESTING
         # print(origin)
         # print(destination)
@@ -30,4 +30,4 @@ def trip():
 
 @main.route('/trip')
 def info():
-    return render_template('test3.html', data=session['data'])
+    return render_template('test3.html', data=session['data'][0])

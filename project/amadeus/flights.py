@@ -114,7 +114,7 @@ def flight_search(lat1, lon1, lat2, lon2, departure_date, return_date, token):
   # INITIAL CODE ENDS
   # ****************DONT CLEAR THIS****************
   [city1, airport_name1],[city2, airport_name2] = asyncio.run(main())
-  url = f"https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode={city1}&destinationLocationCode={city2}&departureDate={departure_date}&returnDate={return_date}&adults=2&max=5"
+  url = f"https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode={city1}&destinationLocationCode={city2}&departureDate={departure_date}&returnDate={return_date}&adults=2"
   response = requests.get(url, headers=headers)
   data = response.json()['data']
   # print(data)
