@@ -1,5 +1,5 @@
 from .amadeus import flights, get_token
-def full_flight(origin, origin_city, destination, destination_city):
+def full_flight(origin, origin_city, destination, destination_city, dep_date, arr_date):
     token = get_token.get_token()
     message = ''
     data = ''
@@ -12,8 +12,8 @@ def full_flight(origin, origin_city, destination, destination_city):
         destination.split(", ")[0]), float(destination.split(", ")[1])
     lat_origin, lon_origin = float(origin.split(
         ", ")[0]), float(origin.split(", ")[1])
-    departure_date = '2021-05-05' #request.form['departureDate']
-    return_date = '2021-06-06' #request.form['returnDate']
+    departure_date = dep_date  #request.form['departureDate']
+    return_date = arr_date #request.form['returnDate']
     data, airport_name1, airport_name2 = flights.flight_search(
         lat_origin, lon_origin, lat_destination, lon_destination, departure_date, return_date, token)
     if data:
