@@ -1,4 +1,4 @@
-const tickets = document.querySelectorAll('.tickets')
+const tickets = document.querySelectorAll('.main-ticket')
 const info = document.querySelectorAll('.info')
 
 tickets.forEach((ticket, idx) => {
@@ -9,10 +9,10 @@ tickets.forEach((ticket, idx) => {
     }
 })
 
-info.forEach((infoEl, idx) => {
-    if (idx % 2 == 1) {
-        infoEl.classList.add('ticket1')
-    } else {
-        infoEl.classList.add('ticket')
-    }
-})
+// info.forEach((infoEl, idx) => {
+//     if (idx % 2 == 1) {
+//         infoEl.classList.add('ticket1')
+//     } else {
+//         infoEl.classList.add('ticket')
+//     }
+// })

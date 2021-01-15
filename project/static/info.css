@@ -68,7 +68,7 @@ body {
 }
 @keyframes clouds {
   from {
-    transform: translateY(-2px);
+    transform: translateY(-15px);
   }
   to {
     transform: translateY(5px);
@@ -76,7 +76,6 @@ body {
 }
 .ticket-svgs {
   width: 100vw;
-  height: 88vh;
   background-color: #d1f0ff;
   display: flex;
   flex-direction: row;
@@ -97,10 +96,10 @@ body {
 }
 @keyframes ticket {
   from {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
   }
   to {
-    transform: translateY(3px);
+    transform: translateY(5px);
   }
 }
 @keyframes aeroplane {
@@ -159,6 +158,17 @@ body {
   height: 150px;
 }
 
+.info2 {
+  display: flex;
+  position: absolute;
+  color: white;
+  background-color: transparent;
+  right: -4%;
+  top: 0%;
+  width: 400px;
+  height: 150px;
+}
+
 .info.ticket {
   animation: ticket 1s infinite alternate;
 }
@@ -187,7 +197,7 @@ body {
   margin-top: 10px;
 }
 
-.details {
+.details, .details2 {
   color: #000;
 }
 
@@ -196,7 +206,24 @@ body {
   width: 100%;
   margin-left: 15px;
 }
+.details2 div {
+  height: 20%;
+  width: 100%;
+  right: 20vw;
+  margin-right: 15px;
+}
 
 .departure {
   margin-top: 5px;
+}
+#time{
+  transform: translateX(30px);
+}
+
+.hotels-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }

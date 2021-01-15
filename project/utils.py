@@ -1,4 +1,4 @@
-from .amadeus import flights, get_token
+from .amadeus import flights, get_token, pois
 def full_flight(origin, origin_city, destination, destination_city, dep_date, arr_date):
     token = get_token.get_token()
     message = ''
@@ -29,4 +29,17 @@ def full_flight(origin, origin_city, destination, destination_city, dep_date, ar
     if not data:
         message = f"No direct flights available from {origin_city} to {destination_city}"
     
+    print(data)
     return [data, message]
+
+def weather_get(cityname):
+    weather = flights.weather(cityname)
+    return weather
+
+def get_hotels(lat, lon):
+    hotel_data = pois.hotels(lat, lon)
+    return hotel_data
+
+def get_pois(lat, lon):
+    poi_data = pois.poi(lat, lon)
+    return poi_data
