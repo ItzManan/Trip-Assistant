@@ -38,18 +38,4 @@ tickets.forEach((ticket, idx) => {
     }
 })
 
-// info.forEach((infoEl, idx) => {
-//     if (idx % 2 == 1) {
-//         infoEl.classList.add('ticket1')
-//     } else {
-//         infoEl.classList.add('ticket')
-//     }
-// })
-info.forEach((infoEl, idx) => {
-    if (idx % 2 == 1) {
-        infoEl.classList.add('ticket1')
-    } else {
-        infoEl.classList.add('ticket')
-    }
-})
 
