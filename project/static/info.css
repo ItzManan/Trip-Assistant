@@ -216,6 +216,7 @@ body {
 .departure {
   margin-top: 5px;
 }
+<<<<<<< Updated upstream
 #time{
   transform: translateX(30px);
 }
@@ -227,3 +228,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+=======
+
+.tip {
+  position: absolute;
+  width: 100%;
+}
+
+.price {
+  cursor: pointer;
+}
+>>>>>>> Stashed changes

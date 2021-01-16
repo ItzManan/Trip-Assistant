@@ -220,6 +220,7 @@
             </g>
         </svg>
     </div>
+    <div class="tip"><center> Tip: Click on the prices to convert the currency. </center></div>
 	<div class="ticket-svgs">
         {% for flight in data %}
         <div class="main-ticket">
@@ -716,7 +717,6 @@
             const minutes = time.getMinutes()
             const seconds = time.getSeconds()
 
-            console.log(seconds)
 
             let secondsShow=String(seconds)
 
@@ -756,6 +756,8 @@
         setTime()
         setInterval(setTime, 1000)
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/money.js/0.0.1/money.min.js" integrity="sha512-dfZQaBBlTXvL+AUQKi7dd/9kb/KhreymnZYVdinjigqTdZUrAnLUNJRV34DUPFCdyek9mMBns3rzTlipnBKhTg==" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='tripInfo.js') }}"></script>
+    
 </body>
 </html>
