@@ -10,6 +10,8 @@ flask = "*"
 requests = "*"
 gunicorn = "*"
 python-dateutil = "*"
+aiohttp = "*"
+asyncio = "*"
 
 [requires]
 python_version = "3.7"
