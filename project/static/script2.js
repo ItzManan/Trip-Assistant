@@ -37,30 +37,39 @@ arr.onchange = function() {
 }
 
 btn.addEventListener('click', () => {
-    loadingBox.classList.remove('hide')
-    loadingBox.style.zIndex = 3
 
-    console.log(data)
-    
-    fetch(window.location.href, {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => response.json())
-    .then(data => {
+    if (!('origin' in data && 'destination' in data)) {
+        alert('Please enter the locations using the dropdown box.')
+    } else if (!('depDate' in data && 'destination' in data)) {
+        alert('Please enter valid dates.')
+    } else if (Date.parse(data.depDate) > Date.parse(data.arrDate)) {
+        alert('Return Date should be later than the departure date')
+    } else {
+        loadingBox.classList.remove('hide')
+        loadingBox.style.zIndex = 3
+
         console.log(data)
-        console.log(window.location.href)
-        window.location = window.location.href+'trip'
-        /*document.body.style.overflowY = 'visible'
-        fields.style.zIndex = 0
-        loadingBox.classList.add('hide')
-        console.log('HELLO')
-        console.log(data)
-        displayData(data)*/
-    })
+        
+        fetch(window.location.href, {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            console.log(window.location.href)
+            window.location = window.location.href+'trip'
+            /*document.body.style.overflowY = 'visible'
+            fields.style.zIndex = 0
+            loadingBox.classList.add('hide')
+            console.log('HELLO')
+            console.log(data)
+            displayData(data)*/
+        })
+    }
 })
 
 var fromPlaces = places({
