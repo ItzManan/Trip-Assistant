@@ -762,15 +762,20 @@
            duration: 1000,
            delay: 200
         });
+        const mainTime = "{{weather['time']}}".split(':')
+        let hours = parseInt(mainTime[0]) 
+        let hoursForClock = hours % 12
+        let minutes = parseInt(mainTime[1])
+        let seconds = parseInt(mainTime[2])
         function setTime(){
             const time = new Date()
             const date = time.getDate()
             const month = time.getMonth()
             const day = time.getDay()
-            const hours = time.getHours()
-            const hoursForClock = hours % 12
-            const minutes = time.getMinutes()
-            const seconds = time.getSeconds()
+            //time.getHours()
+           
+            //time.getMinutes()
+            //time.getSeconds()
 
 
             let secondsShow=String(seconds)
@@ -804,7 +809,7 @@
 
             // timeEl.innerHTML = `${hoursShow}:${minutesShow}:${secondsShow}`
             // dateEl.innerHTML = `${days[day]}, ${months[month-1]} <span class="circle">${date}</span>`
-            
+            seconds+=1
         }
 
 

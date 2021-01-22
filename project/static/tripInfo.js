@@ -38,4 +38,14 @@ tickets.forEach((ticket, idx) => {
     }
 })
 
+<<<<<<< Updated upstream
+=======
+info.forEach((infoEl, idx) => {
+    if (idx % 2 == 1) {
+        infoEl.classList.add('ticket1')
+    } else {
+        infoEl.classList.add('ticket')
+    }
+})
+>>>>>>> Stashed changes
 

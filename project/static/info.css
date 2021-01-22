@@ -47,146 +47,146 @@ body {
   top: 115vh;
 }
 
-.clouds1{
-    position: relative;
-    z-index: 1;
-    top: 16rem;
-    animation: fly 6s infinite alternate;
+.clouds1 {
+  position: relative;
+  z-index: 1;
+  top: 16rem;
+  animation: fly 6s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
 
-.clouds2{
-    position: relative;
-    z-index: 1;
-    top: 22rem;
-    animation: fly 4s infinite alternate;
+.clouds2 {
+  position: relative;
+  z-index: 1;
+  top: 22rem;
+  animation: fly 4s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
-.clouds3{
-    position: relative;
-    z-index: 1;
-    top: 32rem;
-    animation: fly 3s infinite alternate;
+.clouds3 {
+  position: relative;
+  z-index: 1;
+  top: 32rem;
+  animation: fly 3s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
-.clouds4{
-    position: relative;
-    z-index: 1;
-    top: 27rem;
-    animation: fly 5s infinite alternate;
+.clouds4 {
+  position: relative;
+  z-index: 1;
+  top: 27rem;
+  animation: fly 5s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
-.clouds5{
-    position: relative;
-    z-index: 1;
-    top: 36rem;
-    animation: fly 4s infinite alternate;
+.clouds5 {
+  position: relative;
+  z-index: 1;
+  top: 36rem;
+  animation: fly 4s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
-.clouds6{
-    position: relative;
-    z-index: 1;
-    top: 46rem;
-    animation: fly 5s infinite alternate;
+.clouds6 {
+  position: relative;
+  z-index: 1;
+  top: 46rem;
+  animation: fly 5s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
-.clouds7{
-    position: relative;
-    z-index: 1;
-    top: 50rem;
-    animation: fly 6s infinite alternate;
+.clouds7 {
+  position: relative;
+  z-index: 1;
+  top: 50rem;
+  animation: fly 6s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
-.clouds8{
-    position: relative;
-    z-index: 1;
-    top: 38rem;
-    animation: fly 6s infinite alternate;
+.clouds8 {
+  position: relative;
+  z-index: 1;
+  top: 38rem;
+  animation: fly 6s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
-.clouds9{
-    position: relative;
-    z-index: 1;
-    top: 60rem;
-    animation: fly 5s infinite alternate;
+.clouds9 {
+  position: relative;
+  z-index: 1;
+  top: 60rem;
+  animation: fly 5s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
-.clouds10{
-    position: relative;
-    z-index: 1;
-    top: 65rem;
-    animation: fly 7s infinite alternate;
+.clouds10 {
+  position: relative;
+  z-index: 1;
+  top: 65rem;
+  animation: fly 7s infinite alternate;
 }
-@keyframes fly{
-    from{
-        transform: translateX(-100vw);
-    }
-    to{
-        transform: translateX(100vw);
-    }
+@keyframes fly {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
 #aeroplane {
   position: relative;
@@ -232,7 +232,6 @@ body {
     transform: translateY(5px);
   }
 }
-
 
 @keyframes ticket1 {
   from {
@@ -319,7 +318,8 @@ body {
   height: 50%;
 }
 
-.details, .details2 {
+.details,
+.details2 {
   color: #000;
 }
 
@@ -338,18 +338,17 @@ body {
   margin-top: 5px;
 }
 
-#time{
+#time {
   transform: translateX(30px);
 }
 
-.hotels-container{
+.hotels-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-
 
 .tip {
   position: absolute;
@@ -360,30 +359,30 @@ body {
   cursor: pointer;
 }
 
-#key{
+#key {
   transform-origin: top right;
   transform-box: fill-box;
   animation: key 2s infinite alternate;
 }
-#tag3{
+#tag3 {
   transform-origin: left;
   transform-box: fill-box;
   animation: tag 4s infinite alternate;
 }
-@keyframes tag{
-  from{
+@keyframes tag {
+  from {
     transform: rotate(-2deg);
   }
-  to{
+  to {
     transform: rotate(2deg);
   }
 }
 
-@keyframes key{
-  from{
+@keyframes key {
+  from {
     transform: rotate(0deg);
   }
-  to{
+  to {
     transform: rotate(10deg);
   }
 }
