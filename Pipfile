@@ -12,6 +12,8 @@ gunicorn = "*"
 python-dateutil = "*"
 aiohttp = "*"
 asyncio = "*"
+flask-session = "*"
+flask-sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"
