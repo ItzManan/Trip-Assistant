@@ -116,7 +116,7 @@ body {
   transition: opacity 0.5s ease;
 }
 
-.loader {
+/*.loader {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -127,7 +127,7 @@ body {
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
-}
+}*/
 
 .loading-container.hide {
   width: 0;
@@ -137,15 +137,17 @@ body {
   transition: opacity 0.5s ease;
 }
 
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+#circles{
+  transform-origin: top center;
+  transform-box: fill-box;
+  animation: spin 5s linear infinite;
 }
 
+@keyframes spin {
+  to{
+    transform: rotateY(1turn);
+  }
+}
 .ap-nostyle-input {
   z-index: 100;
 }
