@@ -137,14 +137,14 @@ body {
   transition: opacity 0.5s ease;
 }
 
-#circles{
+#circles {
   transform-origin: top center;
   transform-box: fill-box;
   animation: spin 5s linear infinite;
 }
 
 @keyframes spin {
-  to{
+  to {
     transform: rotateY(1turn);
   }
 }
