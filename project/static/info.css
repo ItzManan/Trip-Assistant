@@ -9,28 +9,21 @@ body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }
+
 .upper {
-  width: 100vw;
-  height: 50vh;
-  overflow-y: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   background-color: #d1f0ff;
-  /*background-color: red;*/
-  /*background: url(../static/y-so-serious-white.png);
-    background-repeat: repeat;*/
+  align-items: center;
+  position: relative;
 }
 .weather {
-  margin-bottom: 10px;
+  transform: translateX(100%);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 }
 .flights-container {
   position: relative;
-  width: 100vw;
-  height: 88vh;
+  width: 100%;
   background-color: #d1f0ff;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -55,10 +48,10 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 
@@ -70,10 +63,10 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 .clouds3 {
@@ -84,10 +77,10 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 .clouds4 {
@@ -98,10 +91,10 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 .clouds5 {
@@ -112,10 +105,10 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 .clouds6 {
@@ -126,10 +119,10 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 .clouds7 {
@@ -140,10 +133,10 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 .clouds8 {
@@ -154,10 +147,10 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 .clouds9 {
@@ -168,10 +161,10 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 .clouds10 {
@@ -182,17 +175,15 @@ body {
 }
 @keyframes fly {
   from {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 #aeroplane {
   position: relative;
-  left: 25vw;
-  align-items: center;
-  justify-content: center;
+  transform: translate(50%,50%);
   animation: clouds 1s infinite alternate;
   z-index: 3;
 }
@@ -205,7 +196,7 @@ body {
   }
 }
 .ticket-svgs {
-  width: 100vw;
+  width: 100%;
   background-color: #d1f0ff;
   display: flex;
   flex-direction: row;
@@ -214,13 +205,11 @@ body {
   justify-content: center;
 }
 .ticket1 {
-  margin: 2rem 3rem;
   animation: ticket1 1s infinite alternate;
   z-index: 4;
 }
 
 .ticket {
-  margin: 3rem;
   animation: ticket 1s infinite alternate;
   z-index: 4;
 }
@@ -254,20 +243,21 @@ body {
   transform-box: fill-box;
 }
 .destination {
-  width: 100vw;
+  width: 100%;
   /*height: 120vh;*/
   background-color: #d1f0ff;
   align-items: center;
 }
 .building {
-  width: 100vw;
+  width: 100%;
 }
 .monuments {
-  width: 100vw;
+  width: 100%;
 }
 
 .main-ticket {
   position: relative;
+  margin-top: 40px;
 }
 
 .info {
@@ -330,7 +320,7 @@ body {
 .details2 div {
   height: 20%;
   width: 100%;
-  right: 20vw;
+  right: 20%;
   margin-right: 15px;
 }
 
