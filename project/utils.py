@@ -27,6 +27,7 @@ def full_flight(origin, origin_city, destination, destination_city, dep_date, ar
                 flight['validatingAirlineCodes'][0], token), f"https://content.airhex.com/content/logos/airlines_{flight['validatingAirlineCodes'][0]}_50_20_r.png?md5apikey=4d5669b5107fdc240dba0f03961c48e4"]
 
     if not data:
+        print("HIIII")
         message = f"No direct flights available from {origin_city} to {destination_city}"
     
     print(data)

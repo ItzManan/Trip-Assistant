@@ -21,7 +21,7 @@ def index():
         #time.sleep(2)
         session['data'] = [result,pois]
         session['weather'] = [weather, hotels]
-        
+
         # TESTING
         # print(origin)
         # print(destination)
@@ -36,4 +36,4 @@ def trip():
 
 @main.route('/trip')
 def info():
-    return render_template('test3.html', data=session['data'][0][0], weather=session['weather'][0], hotels=session['weather'][1], pois=session['data'][1])
+    return render_template('test3.html', data=session['data'][0][0], weather=session['weather'][0], hotels=session['weather'][1], pois=session['data'][1], message=session['data'][0][1])

@@ -4,7 +4,7 @@ from get_token import get_token
 token = get_token()
 # headers
 headers= {
-	"Authorization": f"Bearer {token}"
+  "Authorization": f"Bearer {token}"
 }
 
 def hotels(cityCode):
@@ -34,4 +34,4 @@ def hotels(cityCode):
   else:
     pass
 
-hotels("DEL")
+# hotels("DEL")
