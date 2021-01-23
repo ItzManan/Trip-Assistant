@@ -28,6 +28,7 @@ def index():
         session['data'] = [result,pois]
         session['weather'] = [weather, hotels]
         session['covid'] = active_cases
+        session['coords'] = [lat_destination, lon_destination]
 
         # TESTING
         # print(origin)
@@ -43,4 +44,4 @@ def trip():
 
 @main.route('/trip')
 def info():
-    return render_template('test3.html', data=session['data'][0][0], weather=session['weather'][0], hotels=session['weather'][1], pois=session['data'][1], message=session['data'][0][1], covid=session['covid'])
+    return render_template('test3.html', data=session['data'][0][0], weather=session['weather'][0], hotels=session['weather'][1], pois=session['data'][1], message=session['data'][0][1], covid=session['covid'], coords=session['coords'])

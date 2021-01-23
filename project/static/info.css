@@ -19,16 +19,16 @@ body {
   background-color: #d1f0ff;
 }
 .weather {
-  margin-left: 10%;
+  margin-left: auto;
   margin-top: 5px;
   margin-bottom: 5px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 }
-.weather-ke-andar{
+.weather-ke-andar {
   position: relative;
   left: -300px;
-  bottom: -50px
+  bottom: -50px;
 }
 
 .flights-container {
@@ -389,8 +389,7 @@ body {
   }
 }
 
-
-@media(max-width: 1000px){
+@media (max-width: 1000px) {
   .weather {
     transform: translateX(50px);
     margin-top: 20px;
@@ -398,7 +397,7 @@ body {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
   }
-  .weather-ke-andar{
+  .weather-ke-andar {
     position: relative;
     left: -250px;
     bottom: -50px;
@@ -411,4 +410,11 @@ body {
     animation: clouds 1s infinite alternate;
     z-index: 3;
   }
+}
+
+.map {
+  overflow: hidden;
+  border-radius: 20px;
+  margin: auto;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }

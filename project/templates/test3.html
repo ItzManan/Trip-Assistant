@@ -4,6 +4,7 @@
       <title>TRIP-{{ weather['name'] }}</title>
       <link rel="stylesheet" href="{{ url_for('static', filename='info.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
 </head>
 <body>
       <div class="upper" style="position: relative;">
@@ -172,9 +173,17 @@
                 </svg>
             </div>
         </svg>
-        <div class="covid">
-            Active Covid Cases in <img src="{{ covid[0] }}" alt="" style="width: 15px; height:15px;"> : {{covid[1]}}
+        <!--<div class="covid" style="">
+            Active Covid Cases <br> <img src="{{ covid[0] }}" alt="" style="width: 15px; height:15px;"> : {{covid[1]}}
+        </div>-->
+        <div id="map" class="map" style="height: 226px; width: 446px;"></div>
+    </div>
+    <div class="covid" style="background: rgb(209,240,255); height:100px; position:relative; padding-top: 50px;">
+        <center>
+        <div class="box" style="box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2); width:25%; height: 100%; z-index:5; font-size: 1.2rem;  border-radius: 15px;">
+            <center> Active Covid Cases in <img src="{{ covid[0] }}" alt="" style="width: 25px; height:20px;"> <br> {{covid[1]}}</center> 
         </div>
+        </center>
     </div>
     <svg style="width: 100vw" class="cloud-line" width="1631" height="246" viewBox="0 0 1631 246" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="line">
@@ -755,16 +764,32 @@
 
       <script src="../static/anime-master/lib/anime.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
     <script>
         AOS.init({
            duration: 1000,
            delay: 200
         });
+        var map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat(["{{ coords[1] }}", "{{ coords[0] }}"]),
+                zoom: 4
+            })
+        });
+
+
         const mainTime = "{{weather['time']}}".split(':')
         let hours = parseInt(mainTime[0]) 
         let hoursForClock = hours % 12
         let minutes = parseInt(mainTime[1])
         let seconds = parseInt(mainTime[2])
+
         function setTime(){
             const time = new Date()
             const date = time.getDate()
