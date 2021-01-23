@@ -651,7 +651,7 @@ def flight_search(lat1, lon1, lat2, lon2, departure_date, return_date, token):
   url = f"https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode={city1}&destinationLocationCode={city2}&departureDate={departure_date}&returnDate={return_date}&adults=2&max=6"
 
   response = requests.get(url, headers=headers)
-  data = response.json()['data']
+  data = response.json().get('data', 'DataError')
   # print(data)
   # print("\n\n\n")
   print(time.time() - start)

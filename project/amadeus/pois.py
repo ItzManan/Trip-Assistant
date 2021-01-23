@@ -30,7 +30,7 @@ def hotels(lat,lon):
         if i['venue']['categories'][0]['name'] == 'Hotel':
             final_venues.append({'name': i['venue']['name'], 'address': i['venue']['location'].get('address', 'No Address')})
     
-    print(json.dumps(final_venues, indent=2))
+    #print(json.dumps(final_venues, indent=2))
     return final_venues
 
 def food(lat,lon):
@@ -49,7 +49,7 @@ def food(lat,lon):
     final_venues = []
     for i in venues_resp:
         final_venues.append({'name': i['name'], 'address': i['location'].get('address', 'No Address')})
-    print(json.dumps(final_venues, indent=2))
+    #print(json.dumps(final_venues, indent=2))
     return final_venues
 
 def poi(lat,lon):
@@ -68,7 +68,7 @@ def poi(lat,lon):
     final_venues = []
     for i in venues_resp:
         final_venues.append({'name': i['name'], 'address': i['location'].get('address', 'No Address')})
-    print(json.dumps(final_venues, indent=2))
+    #print(json.dumps(final_venues, indent=2))
     return final_venues
 
 

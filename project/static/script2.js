@@ -6,6 +6,7 @@ const fields = document.querySelector('.fields')
 const dep = document.getElementById('dep')
 const arr = document.getElementById('arr')
 const tripContainer = document.querySelector('.trip-container')
+const error = document.querySelector('.error')
 
 console.log(`url('./bgs/${Math.ceil(Math.random()*9)}.jpg')`)
 
@@ -40,14 +41,14 @@ btn.addEventListener('click', () => {
 
     if (!('origin' in data && 'destination' in data)) {
         alert('Please enter the locations using the dropdown box.')
-    } else if (!('depDate' in data && 'destination' in data)) {
+    } else if (!('depDate' in data && 'arrDate' in data)) {
         alert('Please enter valid dates.')
     } else if (Date.parse(data.depDate) > Date.parse(data.arrDate)) {
         alert('Return Date should be later than the departure date')
     } else {
         loadingBox.classList.remove('hide')
         loadingBox.style.zIndex = 3
-
+        error.style.top = '-100%'
         console.log(data)
         
         fetch(window.location.href, {
@@ -60,14 +61,19 @@ btn.addEventListener('click', () => {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            console.log(window.location.href)
-            window.location = window.location.href+'trip'
-            /*document.body.style.overflowY = 'visible'
-            fields.style.zIndex = 0
-            loadingBox.classList.add('hide')
-            console.log('HELLO')
-            console.log(data)
-            displayData(data)*/
+            if (data == 'ERROR') {
+                fields.style.zIndex = 0
+                error.style.top = 0
+                loadingBox.classList.add('hide')
+            } else {
+                console.log(data)
+                console.log(window.location.href)
+                window.location = window.location.href+'trip'
+                /*document.body.style.overflowY = 'visible'
+                console.log('HELLO')
+                console.log(data)
+                displayData(data)*/
+            }
         })
     }
 })

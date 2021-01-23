@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, url_for, request, jsonify, session
-from werkzeug.utils import redirect
 #import requests
 from .utils import full_flight, weather_get, get_hotels, get_pois
 import time
@@ -12,6 +11,10 @@ def index():
     if request.method == "POST":
         data = request.get_json(force=True)
         result = full_flight(data['origin'], data['origin_city'], data['destination'], data['destination_city'], data['depDate'], data['arrDate'])
+
+        if result == 'ERROR':
+            return jsonify('ERROR')  
+
         weather = weather_get(data['destination_city'])
         lat_destination, lon_destination = float(
         data['destination'].split(", ")[0]), float(data['destination'].split(", ")[1])
@@ -19,6 +22,7 @@ def index():
         pois = get_pois(lat_destination, lon_destination)
         # print(data['destination_city'])
         #time.sleep(2)
+        
         session['data'] = [result,pois]
         session['weather'] = [weather, hotels]
 

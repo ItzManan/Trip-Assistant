@@ -16,7 +16,10 @@ def full_flight(origin, origin_city, destination, destination_city, dep_date, ar
     return_date = arr_date #request.form['returnDate']
     data, airport_name1, airport_name2 = flights.flight_search(
         lat_origin, lon_origin, lat_destination, lon_destination, departure_date, return_date, token)
+    #data = 'DataError'
     if data:
+        if data == 'DataError':
+            return 'ERROR'
         message = f'{len(data)} flights found!'
         for flight in data:
             flight["itineraries"][0]['segments'][0]['departure']['iataCode'] = airport_name1
@@ -27,10 +30,8 @@ def full_flight(origin, origin_city, destination, destination_city, dep_date, ar
                 flight['validatingAirlineCodes'][0], token), f"https://content.airhex.com/content/logos/airlines_{flight['validatingAirlineCodes'][0]}_50_20_r.png?md5apikey=4d5669b5107fdc240dba0f03961c48e4"]
 
     if not data:
-        print("HIIII")
         message = f"No direct flights available from {origin_city} to {destination_city}"
     
-    print(data)
     return [data, message]
 
 def weather_get(cityname):
