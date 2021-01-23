@@ -6,7 +6,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-      <div class="upper">
+      <div class="upper" style="position: relative;">
         <svg id="weather" class="weather" width="446" height="226" viewBox="0 0 446 226" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Weather_BOX#1">
             <rect id="Rectangle 3" width="446" height="226" rx="20" fill="url(#paint0_angular)"/>
@@ -172,6 +172,9 @@
                 </svg>
             </div>
         </svg>
+        <div class="covid">
+            Active Covid Cases in <img src="{{ covid[0] }}" alt="" style="width: 15px; height:15px;"> : {{covid[1]}}
+        </div>
     </div>
     <svg style="width: 100vw" class="cloud-line" width="1631" height="246" viewBox="0 0 1631 246" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="line">
@@ -772,7 +775,15 @@
             //time.getMinutes()
             //time.getSeconds()
 
+            if (seconds % 60 == 0) {
+                minutes+=1
+            }
 
+            if (minutes % 60 == 0) {
+                hours+=1
+            }
+
+            hoursForClock = hours % 12
             let secondsShow=String(seconds)
 
             if(seconds<10){secondsShow = '0'+String(seconds)}

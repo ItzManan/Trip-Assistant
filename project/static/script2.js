@@ -99,6 +99,7 @@ fromPlaces.on('change', (e) => {
 })
 
 toPlaces.on('change', (e) => {
+    data.countryCode = e.suggestion.countryCode
     data.destination_city = e.suggestion.name
     data.destination = e.suggestion.latlng.lat + ', ' + e.suggestion.latlng.lng
     console.log(data)
