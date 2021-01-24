@@ -5,8 +5,10 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='info.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
 <body>
+    <div class="home"><center><a href="{{ url_for('main.index') }}"><i class="fas fa-home"></i></a></center></div>
       <div class="upper" style="position: relative;">
         <svg id="weather" class="weather" width="446" height="226" viewBox="0 0 446 226" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Weather_BOX#1">

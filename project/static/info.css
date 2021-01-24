@@ -434,3 +434,23 @@ body {
     padding: 15px;
   }
 }
+
+a:link,
+a:active,
+a:visited,
+a:hover {
+  color: white;
+}
+
+.home {
+  position: fixed;
+  top: 3%;
+  left: 3%;
+  z-index: 6;
+  background: rgb(71, 147, 255);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 30px;
+}

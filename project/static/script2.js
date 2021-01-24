@@ -8,13 +8,9 @@ const arr = document.getElementById('arr')
 const tripContainer = document.querySelector('.trip-container')
 const error = document.querySelector('.error')
 
-console.log(`url('./bgs/${Math.ceil(Math.random()*9)}.jpg')`)
-
 tripContainer.style.backgroundImage = `url('static/bgs/${Math.ceil(Math.random()*9)}.jpg')`
 
 let data = {}
-
-zenscroll.setup(null, 0)
 
 from.addEventListener('focus', () => {
     to.style.zIndex = -1
@@ -39,6 +35,7 @@ arr.onchange = function() {
 
 btn.addEventListener('click', () => {
 
+
     if (!('origin' in data && 'destination' in data)) {
         alert('Please enter the locations using the dropdown box.')
     } else if (!('depDate' in data && 'arrDate' in data)) {
@@ -50,7 +47,8 @@ btn.addEventListener('click', () => {
         loadingBox.style.zIndex = 3
         error.style.top = '-100%'
         console.log(data)
-        
+        tripContainer.style.filter = 'blur(5px)'
+        btn.disabled = true
         fetch(window.location.href, {
             method: 'POST', // or 'PUT'
             headers: {
@@ -65,15 +63,19 @@ btn.addEventListener('click', () => {
                 fields.style.zIndex = 0
                 error.style.top = 0
                 loadingBox.classList.add('hide')
+                tripContainer.style.filter = 'blur(0px)'
+                btn.disabled = false
             } else {
                 console.log(data)
                 console.log(window.location.href)
+                btn.disabled = false
                 window.location = window.location.href+'trip'
                 /*document.body.style.overflowY = 'visible'
                 console.log('HELLO')
                 console.log(data)
                 displayData(data)*/
             }
+         
         })
     }
 })
