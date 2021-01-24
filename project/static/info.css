@@ -389,6 +389,13 @@ body {
   }
 }
 
+.map {
+  overflow: hidden;
+  margin: auto;
+  border-radius: 23px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 1000px) {
   .weather {
     transform: translateX(50px);
@@ -410,11 +417,8 @@ body {
     animation: clouds 1s infinite alternate;
     z-index: 3;
   }
-}
-
-.map {
-  overflow: hidden;
-  border-radius: 20px;
-  margin: auto;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  .map {
+    margin-top: 20px;
+    margin-right: 45px;
+  }
 }
