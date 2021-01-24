@@ -20,7 +20,7 @@ def full_flight(origin, origin_city, destination, destination_city, dep_date, ar
     if data:
         if data == 'DataError':
             return 'ERROR'
-        message = f'{len(data)} flights found!'
+        message = ''
         for flight in data:
             flight["itineraries"][0]['segments'][0]['departure']['iataCode'] = airport_name1
             flight["itineraries"][0]['segments'][0]['arrival']['iataCode'] = airport_name2
