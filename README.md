@@ -34,11 +34,11 @@ Frontend - HTML/CSS/JS
 
 This is a team of 3 school students :
 
-- **Arnav Sharma** - [Github](https://github.com/Arnav17Sharma) [Discord](https://discordapp.com/users/594440218044661760/)
+- **Arnav Sharma** - [Github](https://github.com/Arnav17Sharma)
 
-- **Sanchit Jain** - [Github](https://github.com/Sanchit-Jain07) [Discord](https://www.google.com)
+- **Sanchit Jain** - [Github](https://github.com/Sanchit-Jain07)
 
-- **Manan Jain** - [Github](https://github.com/ItzManan) [Discord](https://www.google.com)
+- **Manan Jain** - [Github](https://github.com/ItzManan)
 
 ## Glance into Plan Your Trip
 
