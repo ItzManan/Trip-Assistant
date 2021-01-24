@@ -396,6 +396,15 @@ body {
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
+.box {
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  width: 25%;
+  height: 100%;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  padding: 15px;
+}
+
 @media (max-width: 1000px) {
   .weather {
     transform: translateX(50px);
@@ -420,5 +429,8 @@ body {
   .map {
     margin-top: 20px;
     margin-right: 45px;
+  }
+  .box {
+    padding: 15px;
   }
 }
