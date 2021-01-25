@@ -41,11 +41,18 @@ This is a team of 3 school students :
 
 - **Manan Jain** - [Github](https://github.com/ItzManan)
 
-## Glance into Plan Your Trip
+## Sample outputs
+
+- Origin city : **Mumbai, Maharashtra, India**
+- Destination city : **Delhi, India**
+- Dates : **25-01-2021 to 30-01-2021**
+
+<img src="trip1.png">
+<img src="trip2.png">
+
+## Glance into Plan Your Trip in different devices
 
 <img src="home1.png">
 <img src="home2.png">
 <img src="home3.png">
 <img src="home4.png">
-<img src="trip1.png">
-<img src="trip2.png">
