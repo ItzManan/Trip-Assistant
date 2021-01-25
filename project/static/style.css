@@ -121,19 +121,6 @@ body {
   transition: opacity 0.5s ease;
 }
 
-/*.loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #43e93a;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}*/
-
 .loading-container.hide {
   width: 0;
   height: 0;

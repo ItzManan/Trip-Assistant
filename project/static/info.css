@@ -435,10 +435,10 @@ body {
   }
 }
 
-a:link,
-a:active,
-a:visited,
-a:hover {
+.home a:link,
+.home a:active,
+.home a:visited,
+.home a:hover {
   color: white;
 }
 

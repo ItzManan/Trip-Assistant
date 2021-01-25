@@ -7,7 +7,7 @@ fx.base = 'USD'
 fx.rates = {
     "EUR": 0.82,
     "USD": 1,
-    "INR": 73.08,
+    "INR": 72.92,
 }
 
 prices.forEach(price => {

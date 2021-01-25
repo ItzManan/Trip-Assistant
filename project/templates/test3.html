@@ -781,7 +781,7 @@
             ],
             view: new ol.View({
                 center: ol.proj.fromLonLat(["{{ coords[1] }}", "{{ coords[0] }}"]),
-                zoom: 4
+                zoom: 6
             })
         });
 
@@ -793,14 +793,6 @@
         let seconds = parseInt(mainTime[2])
 
         function setTime(){
-            const time = new Date()
-            const date = time.getDate()
-            const month = time.getMonth()
-            const day = time.getDay()
-            //time.getHours()
-           
-            //time.getMinutes()
-            //time.getSeconds()
 
             if (seconds % 60 == 0) {
                 minutes+=1

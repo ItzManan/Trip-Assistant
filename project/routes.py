@@ -1,8 +1,6 @@
 from project.covid_data import covid_cases
 from flask import Blueprint, render_template, url_for, request, jsonify, session
-#import requests
 from .utils import full_flight, weather_get, get_hotels, get_pois
-import time
 
 main = Blueprint('main', __name__)
 
@@ -22,25 +20,14 @@ def index():
         hotels = get_hotels(lat_destination, lon_destination)
         pois = get_pois(lat_destination, lon_destination)
         active_cases = covid_cases(data['countryCode'])
-        # print(data['destination_city'])
-        #time.sleep(2)
         
         session['data'] = [result,pois]
         session['weather'] = [weather, hotels]
         session['covid'] = active_cases
         session['coords'] = [lat_destination, lon_destination]
 
-        # TESTING
-        # print(origin)
-        # print(destination)
-        # print(departure_date)
-        # print(return_date)
         return jsonify('Data Success!')
     return render_template('home.html')
-
-'''@main.route('/trip', methods=['POST','GET'])
-def trip():
-    return render_template('index.html', data=session['data'])'''
 
 @main.route('/trip')
 def info():

@@ -35,22 +35,26 @@ arr.onchange = function() {
 
 btn.addEventListener('click', () => {
 
-
+    const time = new Date()
+    const date = time.getTime()
     if (!('origin' in data && 'destination' in data)) {
         alert('Please enter the locations using the dropdown box.')
     } else if (!('depDate' in data && 'arrDate' in data)) {
         alert('Please enter valid dates.')
     } else if (Date.parse(data.depDate) > Date.parse(data.arrDate)) {
         alert('Return Date should be later than the departure date')
+    } else if (Date.parse(data.depDate) < date || Date.parse(data.arrDate) < date) {
+        alert('The dates cannot be before today\'s date')
     } else {
+
         loadingBox.classList.remove('hide')
         loadingBox.style.zIndex = 3
         error.style.top = '-100%'
-        console.log(data)
         tripContainer.style.filter = 'blur(5px)'
         btn.disabled = true
+        
         fetch(window.location.href, {
-            method: 'POST', // or 'PUT'
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -70,10 +74,6 @@ btn.addEventListener('click', () => {
                 console.log(window.location.href)
                 btn.disabled = false
                 window.location = window.location.href+'trip'
-                /*document.body.style.overflowY = 'visible'
-                console.log('HELLO')
-                console.log(data)
-                displayData(data)*/
             }
          
         })
@@ -107,22 +107,3 @@ toPlaces.on('change', (e) => {
     console.log(data)
 })
 
-function displayData(data) {
-    bigdiv = document.createElement('div')
-    bigdiv.classList.add('ok')
-    bigdiv.style.overflowX = 'hidden'
-    bigdiv.style.background = 'black'
-    bigdiv.style.color = 'white'
-    bigdiv.innerHTML = `<center>EPIC ULTRA PRO MAX DATA!!!!!!</center>
-        <br>
-        ${JSON.stringify(data[0])}
-        <br>
-        ${JSON.stringify(data[1])}
-    `
-    document.body.appendChild(bigdiv)
-    /*window.scrollBy({
-        top: window.innerHeight,
-        behavior: 'smooth'
-    })*/
-    zenscroll.to(bigdiv)
-}
