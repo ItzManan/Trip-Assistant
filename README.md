@@ -29,6 +29,7 @@ Frontend - HTML/CSS/JS
 - Airhex for airline logos - [Airhex API](https://airhex.com/api/airlines/)
 - Destination Current Weather - [Open Weather API](https://openweathermap.org/current)
 - Destination Map Location - [Openlayers Map library](https://openlayers.org/)
+- Destination Active Covid Cases - [Novel Covid19 API](https://corona.lmao.ninja/docs/)
 
 ## Team
 
